@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Nauman monogram logo">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9c49a"/><stop offset="1" stop-color="#9c8050"/></linearGradient></defs>
+<path d="M60 5 108 33v54L60 115 12 87V33Z" fill="#10251f" stroke="url(#g)" stroke-width="3"/>
+<path d="M37 82V38h9l28 29V38h9v44h-9L46 53v29Z" fill="#f3eee3"/>
+<path d="M26 94 60 114 94 94" fill="none" stroke="#c9b17f" stroke-width="1.5" opacity=".7"/>
+</svg>
