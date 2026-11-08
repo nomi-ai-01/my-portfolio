@@ -1,0 +1,1360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8ef">
+  <meta name="description" content="Nauman — Websites, WhatsApp Chatbots and n8n Automation.">
+  <title>Nauman | Creative Developer & Automation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fff8ef;
+      --bg-soft: #fff0e2;
+      --surface: #ffffff;
+      --ink: #29233b;
+      --muted: #766d7d;
+      --purple: #7357d9;
+      --purple-dark: #5139ad;
+      --pink: #ff8caf;
+      --yellow: #ffd66b;
+      --blue: #8bd8ed;
+      --green: #9bd9b1;
+      --border: rgba(41, 35, 59, 0.09);
+      --shadow: 0 16px 45px rgba(65, 43, 99, 0.10);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 214, 107, .18), transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(139, 216, 237, .18), transparent 28%),
+        var(--bg);
+      color: var(--ink);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button, a { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+
+    .app {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: fixed;
+      z-index: 0;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(1px);
+      opacity: .5;
+    }
+
+    .blob-one {
+      width: 190px;
+      height: 190px;
+      background: var(--pink);
+      top: 15%;
+      left: -115px;
+      opacity: .13;
+    }
+
+    .blob-two {
+      width: 230px;
+      height: 230px;
+      background: var(--blue);
+      right: -145px;
+      bottom: 8%;
+      opacity: .18;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 20;
+      width: min(1120px, calc(100% - 36px));
+      margin: 18px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      box-shadow: 0 7px 18px rgba(115, 87, 217, .25);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .home-btn {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.8);
+      color: var(--ink);
+      border-radius: 50px;
+      padding: 9px 15px;
+      font-size: .8rem;
+      font-weight: 600;
+      box-shadow: 0 5px 16px rgba(65,43,99,.05);
+      transition: .2s ease;
+    }
+
+    .home-btn:hover {
+      transform: translateY(-2px);
+      background: white;
+    }
+
+    .pages {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 36px));
+      min-height: calc(100vh - 100px);
+      margin: 0 auto;
+      padding: 28px 0 100px;
+    }
+
+    .page {
+      display: none;
+      min-height: 70vh;
+      position: relative;
+      animation: pageEnter .55s ease both;
+    }
+
+    .page.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Keep fixed characters pinned to the screen. */
+    @keyframes pageEnter {
+      from {
+        opacity: 0;
+        transform: none;
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes pageBack {
+      from {
+        opacity: 0;
+        transform: none;
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .page.back-animation {
+      animation: pageBack .45s ease both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 15px;
+      border-radius: 50px;
+      background: #fff;
+      color: var(--purple-dark);
+      border: 1px solid rgba(115,87,217,.13);
+      box-shadow: 0 6px 20px rgba(65,43,99,.05);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      background: #65c98a;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(101,201,138,.14);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Baloo 2', cursive;
+      line-height: 1.08;
+    }
+
+    .section-heading {
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin: 18px 0 12px;
+    }
+
+    .section-heading span { color: var(--purple); }
+
+    .section-subtitle {
+      max-width: 650px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: .98rem;
+    }
+
+    /* Welcome page */
+    #welcome {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 25px;
+      padding-bottom: 55px;
+    }
+
+    .welcome-content {
+      width: 100%;
+      max-width: 850px;
+      position: relative;
+    }
+
+    .welcome-tagline {
+      color: var(--purple-dark);
+      font-weight: 700;
+      font-size: clamp(.9rem, 2vw, 1.08rem);
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Peek image sits above the heading. */
+    .peek-character {
+      display: block;
+      width: clamp(155px, 25vw, 235px);
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto -30px;
+      position: relative;
+      z-index: 3;
+      animation: gentleFloat 3.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .welcome-title {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(3.1rem, 9vw, 6.8rem);
+      font-weight: 800;
+      letter-spacing: -3px;
+      margin: 0 auto 12px;
+      line-height: .98;
+    }
+
+    .welcome-title .name {
+      display: block;
+      color: var(--purple);
+      text-shadow: 3px 4px 0 rgba(255, 140, 175, .2);
+    }
+
+    .welcome-description {
+      color: var(--muted);
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      line-height: 1.8;
+      max-width: 620px;
+      margin: 18px auto 25px;
+    }
+
+    .welcome-description strong { color: var(--ink); }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .primary-btn, .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 50px;
+      padding: 13px 23px;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .primary-btn {
+      color: white;
+      background: linear-gradient(135deg, var(--purple), #9479f2);
+      box-shadow: 0 10px 24px rgba(115,87,217,.27);
+    }
+
+    .secondary-btn {
+      color: var(--ink);
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 20px rgba(65,43,99,.06);
+    }
+
+    .primary-btn:hover, .secondary-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .content-card {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* About */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 35px;
+      margin-top: 22px;
+    }
+
+    .about-card { padding: clamp(24px, 4vw, 38px); }
+
+    .about-card p {
+      color: var(--muted);
+      line-height: 1.95;
+      font-size: .96rem;
+      margin-top: 13px;
+    }
+
+    .about-card p strong { color: var(--ink); }
+
+    .skill-title {
+      margin: 27px 0 13px;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.45rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 15px;
+      border-radius: 50px;
+      background: var(--bg-soft);
+      color: #6a4d9c;
+      font-size: .82rem;
+      font-weight: 700;
+      border: 1px solid rgba(115,87,217,.08);
+      animation: skillPop .55s both;
+      transition: transform .2s ease;
+    }
+
+    .skill:nth-child(3n + 1) { background: #fff0f4; color: #bd5478; }
+    .skill:nth-child(3n + 2) { background: #edf8ff; color: #367d9d; }
+    .skill:nth-child(3n) { background: #f2f0ff; color: #6952b5; }
+
+    .skill:hover { transform: translateY(-4px) rotate(-2deg); }
+
+    @keyframes skillPop {
+      from { opacity: 0; transform: translateY(12px) scale(.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .about-character-wrap {
+      min-height: 370px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .about-character-wrap::before {
+      content: "";
+      position: absolute;
+      width: 290px;
+      height: 290px;
+      max-width: 90%;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ffe1e9, #e6e0ff);
+    }
+
+    .about-character {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 330px);
+      max-height: 390px;
+      object-fit: contain;
+      animation: gentleFloat 3.8s ease-in-out infinite;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 28px;
+      padding-bottom: 20px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(65,43,99,.07);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 38px rgba(65,43,99,.13);
+    }
+
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: #f2edf8;
+    }
+
+    .project-info { padding: 20px 21px 22px; }
+
+    .project-info h3 {
+      font-size: 1.55rem;
+      margin-bottom: 7px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.7;
+      min-height: 50px;
+      margin-bottom: 15px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 50px;
+      padding: 10px 16px;
+      color: white;
+      background: var(--purple);
+      font-size: .8rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .project-link:hover {
+      background: var(--purple-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      padding: 25px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 28px rgba(65,43,99,.06);
+      transition: transform .2s ease;
+    }
+
+    .service-card:hover { transform: translateY(-5px) rotate(-.5deg); }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      font-size: 1.65rem;
+      margin-bottom: 15px;
+      background: #f1edff;
+    }
+
+    .service-card:nth-child(2) .service-icon { background: #e9f8ef; }
+    .service-card:nth-child(3) .service-icon { background: #fff0f4; }
+    .service-card:nth-child(4) .service-icon { background: #fff5dd; }
+
+    .service-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .88rem;
+    }
+
+    /* Contact */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+      margin-top: 25px;
+    }
+
+    .contact-card { padding: clamp(24px, 4vw, 38px); }
+
+    .contact-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-card > p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 22px;
+      font-size: .92rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      overflow-wrap: anywhere;
+    }
+
+    .contact-icon {
+      flex: 0 0 43px;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #f1edff;
+      font-size: 1.2rem;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+      margin-bottom: 3px;
+    }
+
+    .contact-item strong { font-size: .88rem; }
+
+    .contact-character-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 370px;
+      position: relative;
+    }
+
+    .contact-character-wrap::before {
+      content: "";
+      position: absolute;
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #e6e0ff, #dff6ff);
+    }
+
+    .contact-character {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 340px);
+      max-height: 390px;
+      object-fit: contain;
+      animation: gentleFloat 4s ease-in-out infinite;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 50px;
+      padding: 11px 17px;
+      background: #f1edff;
+      color: var(--purple-dark);
+      font-size: .82rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .social-btn:hover { transform: translateY(-3px); }
+
+    .social-btn.linkedin {
+      background: #e8f4ff;
+      color: #1769aa;
+    }
+
+    .social-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Fixed character images */
+    .page-character {
+      position: fixed;
+      z-index: 5;
+      width: clamp(125px, 19vw, 205px);
+      max-height: 245px;
+      object-fit: contain;
+      right: max(22px, calc((100vw - 1120px) / 2));
+      bottom: 70px;
+      pointer-events: none;
+      animation: gentleFloat 3.8s ease-in-out infinite;
+    }
+
+    .projects-character { width: clamp(120px, 17vw, 185px); }
+    .services-character { width: clamp(125px, 18vw, 195px); }
+
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Bottom navigation */
+    .bottom-nav {
+      position: fixed;
+      z-index: 30;
+      left: 50%;
+      bottom: 17px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 50px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.95);
+      box-shadow: 0 12px 35px rgba(49,36,76,.16);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+      border: 0;
+      border-radius: 50px;
+      background: #d8d0e5;
+      transition: .25s ease;
+    }
+
+    .nav-dot.active {
+      width: 28px;
+      background: var(--purple);
+    }
+
+    .nav-label {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+      margin: 0 5px;
+      white-space: nowrap;
+    }
+
+    /* Page controls */
+    .page-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 30px;
+    }
+
+    .page-controls button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 50px;
+      padding: 12px 20px;
+      font-size: .84rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .back-btn {
+      color: var(--ink);
+      background: white;
+      border: 1px solid var(--border) !important;
+    }
+
+    .next-btn {
+      color: white;
+      background: var(--purple);
+      box-shadow: 0 8px 20px rgba(115,87,217,.2);
+      margin-left: auto;
+    }
+
+    .page-controls button:hover { transform: translateY(-3px); }
+
+    /* Walking character */
+    #walker {
+      position: fixed;
+      z-index: 100;
+      width: 135px;
+      height: auto;
+      left: -180px;
+      bottom: 16px;
+      object-fit: contain;
+      display: none;
+      pointer-events: none;
+    }
+
+    #walker.walking {
+      display: block;
+      animation:
+        walkAcross 1.35s linear forwards,
+        walkBob .28s ease-in-out infinite alternate;
+    }
+
+    @keyframes walkAcross {
+      from { left: -180px; }
+      to { left: calc(100vw + 180px); }
+    }
+
+    @keyframes walkBob {
+      from { margin-bottom: 0; }
+      to { margin-bottom: 8px; }
+    }
+
+    /* Floating WhatsApp button */
+    .whatsapp-float {
+      position: fixed;
+      z-index: 40;
+      right: 20px;
+      bottom: 22px;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: #25D366;
+      box-shadow: 0 8px 22px rgba(37,211,102,.35);
+      transition: transform .2s ease;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    .whatsapp-float svg {
+      width: 29px;
+      height: 29px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #9a91a2;
+      font-size: .72rem;
+      padding: 20px 0 5px;
+    }
+
+    /* Responsive */
+    @media (max-width: 760px) {
+      .topbar {
+        width: calc(100% - 26px);
+        margin-top: 12px;
+      }
+
+      .pages {
+        width: calc(100% - 30px);
+        padding-top: 22px;
+        padding-bottom: 115px;
+      }
+
+      .about-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .about-character-wrap,
+      .contact-character-wrap {
+        min-height: 250px;
+      }
+
+      .about-character,
+      .contact-character {
+        width: 220px;
+        max-height: 250px;
+      }
+
+      .about-character-wrap::before,
+      .contact-character-wrap::before {
+        width: 210px;
+        height: 210px;
+      }
+
+      .projects-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .project-info p { min-height: 0; }
+
+      .page-character {
+        width: 120px;
+        max-height: 145px;
+        right: 8px;
+        bottom: 82px;
+      }
+
+      .projects-character,
+      .services-character {
+        width: 120px;
+      }
+
+      .page-controls { padding-top: 25px; }
+
+      .bottom-nav {
+        bottom: 12px;
+        gap: 7px;
+        padding: 9px 11px;
+      }
+
+      .nav-label { font-size: .65rem; }
+
+      .whatsapp-float {
+        width: 49px;
+        height: 49px;
+        right: 13px;
+        bottom: 76px;
+      }
+
+      .welcome-title { letter-spacing: -1.5px; }
+
+      .peek-character {
+        width: 155px;
+        margin-bottom: -22px;
+      }
+
+      .welcome-description { max-width: 480px; }
+      .page { min-height: 72vh; }
+    }
+
+    @media (max-width: 420px) {
+      .brand { font-size: 1.2rem; }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+      }
+
+      .home-btn {
+        padding: 8px 11px;
+        font-size: .72rem;
+      }
+
+      .section-heading { font-size: 2.65rem; }
+      .welcome-title { font-size: 3.15rem; }
+
+      .page-controls button {
+        padding: 11px 15px;
+        font-size: .78rem;
+      }
+
+      .nav-label { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+    <!-- Header -->
+    <header class="topbar">
+      <a class="brand" href="#" onclick="goHome(); return false;" aria-label="Nauman home">
+        <span class="brand-mark">N</span>
+        <span>Nauman.</span>
+      </a>
+
+      <div class="top-actions">
+        <button class="home-btn" onclick="goHome()">⌂ Home</button>
+      </div>
+    </header>
+
+    <main class="pages">
+
+      <!-- PAGE 1: WELCOME -->
+      <section class="page active" id="welcome">
+        <div class="welcome-content">
+
+          <div class="welcome-tagline">
+            Creative Developer · Chatbot Builder · Automation
+          </div>
+
+          <img
+            src="images/peek.png"
+            alt="Nauman character peeking over the welcome heading"
+            class="peek-character"
+          >
+
+          <h1 class="welcome-title">
+            Hi, I'm
+            <span class="name">Nauman 👋</span>
+          </h1>
+
+          <p class="welcome-description">
+            I build <strong>beautiful websites</strong>,
+            <strong>smart WhatsApp chatbots</strong> and
+            <strong>powerful n8n automations</strong>
+            that help businesses grow.
+          </p>
+
+          <div class="button-row">
+            <button class="primary-btn" onclick="nextPage()">
+              Explore My Work <span>→</span>
+            </button>
+            <a class="secondary-btn" href="https://wa.me/923164387851" target="_blank" rel="noopener">
+              Let's Talk 💬
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 2: ABOUT -->
+      <section class="page" id="about">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE ABOUT ME</div>
+        <h2 class="section-heading">Who is <span>Nauman?</span></h2>
+
+        <div class="about-layout">
+          <div class="content-card about-card">
+            <p>
+              Hey! I'm Nauman, a creative web developer and automation enthusiast.
+              I enjoy turning ideas into clean, useful and engaging digital experiences.
+            </p>
+
+            <p>
+              From responsive websites and online catalogues to WhatsApp chatbots
+              and workflow automation, I love building practical solutions that
+              make everyday work easier.
+            </p>
+
+            <p>
+              My focus is on creating projects that are <strong>simple to use,
+              visually appealing and genuinely helpful.</strong>
+            </p>
+
+            <h3 class="skill-title">My Skills & Tools</h3>
+
+            <div class="skills" id="skills">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Responsive Design</span>
+              <span class="skill">WhatsApp Chatbots</span>
+              <span class="skill">n8n Automation</span>
+              <span class="skill">API Integration</span>
+              <span class="skill">AI Tools</span>
+              <span class="skill">GitHub Pages</span>
+            </div>
+          </div>
+
+          <div class="about-character-wrap">
+            <img src="images/stand.png" alt="Nauman standing character" class="about-character">
+          </div>
+        </div>
+
+        <div class="page-controls">
+          <button class="back-btn" onclick="previousPage()">← Back</button>
+          <button class="next-btn" onclick="nextPage()">My Projects →</button>
+        </div>
+      </section>
+
+      <!-- PAGE 3: PROJECTS -->
+      <section class="page" id="projects">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> THINGS I'VE BUILT</div>
+        <h2 class="section-heading">Featured <span>Projects</span></h2>
+        <p class="section-subtitle">
+          A selection of websites and digital projects I've worked on.
+          Explore them and see what I've been creating.
+        </p>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card">
+            <img src="images/navaar.jpg" alt="Navaar Studio website preview" class="project-image" loading="lazy">
+            <div class="project-info">
+              <h3>Navaar Studio</h3>
+              <p>A creative studio website with a polished design and a modern online presence.</p>
+              <a class="project-link" href="https://nauman-ai-786.github.io/Navaar-studio/" target="_blank" rel="noopener">
+                Visit Live Site ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <img src="images/azan.jpg" alt="Azan Garments website preview" class="project-image" loading="lazy">
+            <div class="project-info">
+              <h3>Azan Garments</h3>
+              <p>A kids clothing store catalogue in Lahore, featuring product filters and convenient WhatsApp ordering.</p>
+              <a class="project-link" href="https://nauman-ai-786.github.io/azan-garments-org/" target="_blank" rel="noopener">
+                Visit Live Site ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <img src="images/iqra.jpg" alt="Iqra Tailor website preview" class="project-image" loading="lazy">
+            <div class="project-info">
+              <h3>Iqra Tailor</h3>
+              <p>A tailoring shop website with services and easy WhatsApp contact.</p>
+              <a class="project-link" href="https://nauman-ai-786.github.io/iqra-tailor/" target="_blank" rel="noopener">
+                Visit Live Site ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <img src="images/cifar100.jpg" alt="CIFAR-100 image recognition project preview" class="project-image" loading="lazy">
+            <div class="project-info">
+              <h3>CIFAR-100 Image Recognition</h3>
+              <p>An image recognition project that explores machine learning classification across the CIFAR-100 dataset.</p>
+              <a class="project-link" href="https://naumanrafique646-glitch.github.io/cifar100-image-recognition/" target="_blank" rel="noopener">
+                Visit Live Site ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card">
+            <img src="images/ayesha.jpg" alt="Ayesha Beauty Hub website preview" class="project-image" loading="lazy">
+            <div class="project-info">
+              <h3>Ayesha Beauty Hub</h3>
+              <p>A website designed for women, featuring a range of beauty products in a dedicated online collection.</p>
+              <a class="project-link" href="https://nauman-ai-786.github.io/Ayesha-Beauty-Hub/" target="_blank" rel="noopener">
+                Visit Live Site ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card">
+            <img src="images/sukhan.jpg" alt="Sukhan-e-Awaz text-to-speech website preview" class="project-image" loading="lazy">
+            <div class="project-info">
+              <h3>Sukhan-e-Awaz</h3>
+              <p>A multilingual text-to-speech website that converts Urdu, Hindi and English text into spoken audio.</p>
+              <a class="project-link" href="https://nauman-ai-786.github.io/text-to-speech/" target="_blank" rel="noopener">
+                Visit Live Site ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <img src="images/point.png" alt="" class="page-character projects-character">
+
+        <div class="page-controls">
+          <button class="back-btn" onclick="previousPage()">← Back</button>
+          <button class="next-btn" onclick="nextPage()">My Services →</button>
+        </div>
+      </section>
+
+      <!-- PAGE 4: SERVICES -->
+      <section class="page" id="services">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> WHAT I CAN DO FOR YOU</div>
+        <h2 class="section-heading">My <span>Services</span></h2>
+        <p class="section-subtitle">
+          Practical digital solutions to help your business build its online presence,
+          connect with customers and save time.
+        </p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>Website Development</h3>
+            <p>Modern, responsive and user-friendly websites designed to showcase your business and services.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💬</div>
+            <h3>WhatsApp Order Bot</h3>
+            <p>Helpful WhatsApp chatbot experiences that make it easier for customers to ask questions and place orders.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⚙️</div>
+            <h3>n8n Automation</h3>
+            <p>Automated workflows that connect your tools, reduce repetitive tasks and help your work run smoothly.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📣</div>
+            <h3>Facebook Auto-Posting</h3>
+            <p>Streamline your social media publishing with automated Facebook content posting workflows.</p>
+          </article>
+        </div>
+
+        <img src="images/think.png" alt="" class="page-character services-character">
+
+        <div class="page-controls">
+          <button class="back-btn" onclick="previousPage()">← Back</button>
+          <button class="next-btn" onclick="nextPage()">Contact Me →</button>
+        </div>
+      </section>
+
+      <!-- PAGE 5: CONTACT -->
+      <section class="page" id="contact">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> LET'S CONNECT</div>
+        <h2 class="section-heading">Let's Build Something <span>Great!</span></h2>
+        <p class="section-subtitle">
+          Have a project in mind, need a website or want to automate something?
+          I'd love to hear from you.
+        </p>
+
+        <div class="contact-layout">
+          <div class="content-card contact-card">
+            <h3>Get in Touch 👋</h3>
+            <p>Reach out and let's talk about your next idea.</p>
+
+            <a class="contact-item" href="https://wa.me/923164387851" target="_blank" rel="noopener">
+              <span class="contact-icon">💬</span>
+              <span>
+                <small>WhatsApp</small>
+                <strong>0316 4387851</strong>
+              </span>
+            </a>
+
+            <!-- Email address: update both the mailto and visible address if it changes. -->
+            <a class="contact-item" href="mailto:0naumanali98@gmail.com">
+              <span class="contact-icon">✉️</span>
+              <span>
+                <small>Email</small>
+                <strong>0naumanali98@gmail.com</strong>
+              </span>
+            </a>
+
+            <div class="social-buttons">
+              <a class="social-btn" href="https://wa.me/923164387851" target="_blank" rel="noopener">
+                <!-- WhatsApp SVG logo -->
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path d="M16.02 3C8.85 3 3.02 8.78 3.02 15.9c0 2.28.61 4.51 1.77 6.47L3 29l6.83-1.78a13.1 13.1 0 0 0 6.19 1.55h.01c7.17 0 13-5.79 13-12.9 0-3.45-1.35-6.69-3.81-9.13A12.9 12.9 0 0 0 16.02 3Zm0 23.58h-.01c-1.88 0-3.73-.5-5.34-1.45l-.38-.22-4.05 1.05 1.08-3.92-.25-.4a10.65 10.65 0 0 1-1.64-5.74c0-5.87 4.8-10.65 10.7-10.65 2.85 0 5.53 1.11 7.54 3.12a10.57 10.57 0 0 1 3.13 7.53c0 5.87-4.8 10.65-10.78 10.65Zm5.87-7.97c-.32-.16-1.9-.93-2.2-1.03-.3-.11-.51-.16-.73.16-.22.32-.84 1.03-1.03 1.24-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.59-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.73-1.74-1-2.38-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.67 0 1.58 1.16 3.1 1.32 3.31.16.21 2.28 3.46 5.52 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.77 2.17-1.51.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.62-.37Z"/>
+                </svg>
+                WhatsApp
+              </a>
+
+              <a class="social-btn linkedin"
+                 href="https://www.linkedin.com/in/syed-nauman-ali-19760b17b"
+                 target="_blank"
+                 rel="noopener">
+                in LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-character-wrap">
+            <img src="images/laptop.png" alt="Nauman working on a laptop" class="contact-character">
+          </div>
+        </div>
+
+        <div class="page-controls">
+          <button class="back-btn" onclick="previousPage()">← Back</button>
+          <button class="next-btn" onclick="goHome()">Back to Home ⌂</button>
+        </div>
+      </section>
+
+      <footer class="footer-note">
+        Made with ❤️ by Nauman
+      </footer>
+    </main>
+
+    <!-- Character used during page transitions -->
+    <img id="walker" src="images/walk.png" alt="Character walking to the next page">
+
+    <!-- Floating WhatsApp shortcut with official-style SVG mark -->
+    <a class="whatsapp-float"
+       href="https://wa.me/923164387851"
+       target="_blank"
+       rel="noopener"
+       aria-label="Chat with me on WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16.02 3C8.85 3 3.02 8.78 3.02 15.9c0 2.28.61 4.51 1.77 6.47L3 29l6.83-1.78a13.1 13.1 0 0 0 6.19 1.55h.01c7.17 0 13-5.79 13-12.9 0-3.45-1.35-6.69-3.81-9.13A12.9 12.9 0 0 0 16.02 3Zm0 23.58h-.01c-1.88 0-3.73-.5-5.34-1.45l-.38-.22-4.05 1.05 1.08-3.92-.25-.4a10.65 10.65 0 0 1-1.64-5.74c0-5.87 4.8-10.65 10.7-10.65 2.85 0 5.53 1.11 7.54 3.12a10.57 10.57 0 0 1 3.13 7.53c0 5.87-4.8 10.65-10.78 10.65Zm5.87-7.97c-.32-.16-1.9-.93-2.2-1.03-.3-.11-.51-.16-.73.16-.22.32-.84 1.03-1.03 1.24-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.59-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.73-1.74-1-2.38-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.67 0 1.58 1.16 3.1 1.32 3.31.16.21 2.28 3.46 5.52 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.77 2.17-1.51.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.62-.37Z"/>
+      </svg>
+    </a>
+
+    <!-- Bottom page navigation -->
+    <nav class="bottom-nav" aria-label="Portfolio pages">
+      <span class="nav-label" id="navLabel">Welcome</span>
+      <button class="nav-dot active" aria-label="Welcome page" onclick="goToPage(0)"></button>
+      <button class="nav-dot" aria-label="About page" onclick="goToPage(1)"></button>
+      <button class="nav-dot" aria-label="Projects page" onclick="goToPage(2)"></button>
+      <button class="nav-dot" aria-label="Services page" onclick="goToPage(3)"></button>
+      <button class="nav-dot" aria-label="Contact page" onclick="goToPage(4)"></button>
+    </nav>
+  </div>
+
+  <script>
+    // Page order: Welcome, About, Projects, Services, Contact.
+    const pageIds = ["welcome", "about", "projects", "services", "contact"];
+    const pageNames = ["Welcome", "About", "Projects", "Services", "Contact"];
+
+    let currentPage = 0;
+    let isTransitioning = false;
+
+    const walker = document.getElementById("walker");
+    const navDots = document.querySelectorAll(".nav-dot");
+    const navLabel = document.getElementById("navLabel");
+
+    // Display the selected page.
+    function showPage(index, direction = "next") {
+      document.querySelectorAll(".page").forEach((page) => {
+        page.classList.remove("active", "back-animation");
+        page.style.animation = "none";
+      });
+
+      const selectedPage = document.getElementById(pageIds[index]);
+
+      void selectedPage.offsetWidth;
+
+      selectedPage.classList.add("active");
+      selectedPage.style.animation = direction === "back"
+        ? "pageBack .45s ease both"
+        : "pageEnter .55s ease both";
+
+      currentPage = index;
+
+      navDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("active", dotIndex === index);
+      });
+
+      navLabel.textContent = pageNames[index];
+
+      // Restart skill badge entrance animations when About is opened.
+      if (pageIds[index] === "about") {
+        document.querySelectorAll(".skill").forEach((skill, skillIndex) => {
+          skill.style.animation = "none";
+          void skill.offsetWidth;
+          skill.style.animation = `skillPop .55s ${skillIndex * 0.06}s both`;
+        });
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Walk across the screen before opening the next page.
+    function nextPage() {
+      if (isTransitioning || currentPage >= pageIds.length - 1) return;
+
+      isTransitioning = true;
+      walker.classList.remove("walking");
+      walker.style.display = "block";
+      walker.style.left = "-180px";
+
+      void walker.offsetWidth;
+      walker.classList.add("walking");
+
+      window.setTimeout(() => {
+        walker.classList.remove("walking");
+        walker.style.display = "none";
+        showPage(currentPage + 1, "next");
+        isTransitioning = false;
+      }, 1350);
+    }
+
+    function previousPage() {
+      if (isTransitioning || currentPage <= 0) return;
+      showPage(currentPage - 1, "back");
+    }
+
+    function goToPage(index) {
+      if (isTransitioning || index < 0 || index >= pageIds.length) return;
+      if (index === currentPage) return;
+
+      if (index === currentPage + 1) {
+        nextPage();
+      } else {
+        showPage(index, index < currentPage ? "back" : "next");
+      }
+    }
+
+    function goHome() {
+      if (isTransitioning || currentPage === 0) return;
+      showPage(0, "back");
+    }
+
+    // Keyboard navigation.
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") {
+        nextPage();
+      } else if (event.key === "ArrowLeft") {
+        previousPage();
+      } else if (event.key === "Home") {
+        goHome();
+      }
+    });
+  </script>
+</body>
+</html>
