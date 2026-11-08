@@ -227,6 +227,28 @@
 
     .section-heading span { color: var(--purple); }
 
+    /* Projects/Services character peeks from behind the heading. */
+    .section-peek-character {
+      display: block;
+      width: clamp(230px, 65vw, 340px);
+      height: auto;
+      max-height: 250px;
+      object-fit: contain;
+      margin: 8px auto -42px;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      animation: gentleFloat 3.5s ease-in-out infinite;
+    }
+
+    .peek-heading {
+      position: relative;
+      z-index: 2;
+      width: fit-content;
+      max-width: 100%;
+      margin-top: 0;
+    }
+
     .section-subtitle {
       max-width: 650px;
       color: var(--muted);
@@ -512,9 +534,15 @@
       display: grid;
       place-items: center;
       border-radius: 18px;
-      font-size: 1.65rem;
       margin-bottom: 15px;
       background: #f1edff;
+    }
+
+    .service-icon img {
+      display: block;
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
     }
 
     .service-card:nth-child(2) .service-icon { background: #e9f8ef; }
@@ -572,7 +600,13 @@
       place-items: center;
       border-radius: 14px;
       background: #f1edff;
-      font-size: 1.2rem;
+    }
+
+    .contact-icon img {
+      display: block;
+      width: 23px;
+      height: 23px;
+      object-fit: contain;
     }
 
     .contact-item small {
@@ -638,27 +672,13 @@
       color: #1769aa;
     }
 
-    .social-btn svg {
+    .social-btn img {
+      display: block;
       width: 18px;
       height: 18px;
-      fill: currentColor;
-    }
-
-    /* Fixed character images */
-    .page-character {
-      position: fixed;
-      z-index: 5;
-      width: clamp(125px, 19vw, 205px);
-      max-height: 245px;
       object-fit: contain;
-      right: max(22px, calc((100vw - 1120px) / 2));
-      bottom: 70px;
-      pointer-events: none;
-      animation: gentleFloat 3.8s ease-in-out infinite;
+      flex: 0 0 18px;
     }
-
-    .projects-character { width: clamp(120px, 17vw, 185px); }
-    .services-character { width: clamp(125px, 18vw, 195px); }
 
     @keyframes gentleFloat {
       0%, 100% { transform: translateY(0); }
@@ -746,7 +766,7 @@
     /* Walking character */
     #walker {
       position: fixed;
-      z-index: 100;
+      z-index: 0;
       width: 135px;
       height: auto;
       left: -180px;
@@ -792,11 +812,11 @@
 
     .whatsapp-float:hover { transform: scale(1.08); }
 
-    .whatsapp-float svg {
+    .whatsapp-float img {
       width: 29px;
       height: 29px;
       display: block;
-      fill: currentColor;
+      object-fit: contain;
     }
 
     .footer-note {
@@ -826,19 +846,19 @@
 
       .about-character-wrap,
       .contact-character-wrap {
-        min-height: 250px;
+        min-height: 310px;
       }
 
       .about-character,
       .contact-character {
-        width: 220px;
-        max-height: 250px;
+        width: min(280px, 88vw);
+        max-height: 300px;
       }
 
       .about-character-wrap::before,
       .contact-character-wrap::before {
-        width: 210px;
-        height: 210px;
+        width: min(260px, 82vw);
+        height: min(260px, 82vw);
       }
 
       .projects-grid,
@@ -848,18 +868,6 @@
       }
 
       .project-info p { min-height: 0; }
-
-      .page-character {
-        width: 120px;
-        max-height: 145px;
-        right: 8px;
-        bottom: 82px;
-      }
-
-      .projects-character,
-      .services-character {
-        width: 120px;
-      }
 
       .page-controls { padding-top: 25px; }
 
@@ -881,8 +889,13 @@
       .welcome-title { letter-spacing: -1.5px; }
 
       .peek-character {
-        width: 155px;
-        margin-bottom: -22px;
+        width: clamp(155px, 25vw, 235px);
+        margin-bottom: -30px;
+      }
+
+      .section-peek-character {
+        width: clamp(230px, 65vw, 340px);
+        margin-bottom: -38px;
       }
 
       .welcome-description { max-width: 480px; }
@@ -1033,7 +1046,8 @@
       <!-- PAGE 3: PROJECTS -->
       <section class="page" id="projects">
         <div class="eyebrow"><span class="eyebrow-dot"></span> THINGS I'VE BUILT</div>
-        <h2 class="section-heading">Featured <span>Projects</span></h2>
+        <img src="images/peek.png" alt="" class="section-peek-character" aria-hidden="true">
+        <h2 class="section-heading peek-heading">Featured <span>Projects</span></h2>
         <p class="section-subtitle">
           A selection of websites and digital projects I've worked on.
           Explore them and see what I've been creating.
@@ -1115,8 +1129,6 @@
 
         </div>
 
-        <img src="images/point.png" alt="" class="page-character projects-character">
-
         <div class="page-controls">
           <button class="back-btn" onclick="previousPage()">← Back</button>
           <button class="next-btn" onclick="nextPage()">My Services →</button>
@@ -1126,7 +1138,8 @@
       <!-- PAGE 4: SERVICES -->
       <section class="page" id="services">
         <div class="eyebrow"><span class="eyebrow-dot"></span> WHAT I CAN DO FOR YOU</div>
-        <h2 class="section-heading">My <span>Services</span></h2>
+        <img src="images/peek.png" alt="" class="section-peek-character" aria-hidden="true">
+        <h2 class="section-heading peek-heading">My <span>Services</span></h2>
         <p class="section-subtitle">
           Practical digital solutions to help your business build its online presence,
           connect with customers and save time.
@@ -1134,31 +1147,29 @@
 
         <div class="services-grid">
           <article class="service-card">
-            <div class="service-icon">🌐</div>
+            <div class="service-icon"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="lazy"></div>
             <h3>Website Development</h3>
             <p>Modern, responsive and user-friendly websites designed to showcase your business and services.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">💬</div>
+            <div class="service-icon"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" loading="lazy"></div>
             <h3>WhatsApp Order Bot</h3>
             <p>Helpful WhatsApp chatbot experiences that make it easier for customers to ask questions and place orders.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">⚙️</div>
+            <div class="service-icon"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" loading="lazy"></div>
             <h3>n8n Automation</h3>
             <p>Automated workflows that connect your tools, reduce repetitive tasks and help your work run smoothly.</p>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">📣</div>
+            <div class="service-icon"><img src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook" loading="lazy"></div>
             <h3>Facebook Auto-Posting</h3>
             <p>Streamline your social media publishing with automated Facebook content posting workflows.</p>
           </article>
         </div>
-
-        <img src="images/think.png" alt="" class="page-character services-character">
 
         <div class="page-controls">
           <button class="back-btn" onclick="previousPage()">← Back</button>
@@ -1181,7 +1192,7 @@
             <p>Reach out and let's talk about your next idea.</p>
 
             <a class="contact-item" href="https://wa.me/923164387851" target="_blank" rel="noopener">
-              <span class="contact-icon">💬</span>
+              <span class="contact-icon"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" loading="lazy"></span>
               <span>
                 <small>WhatsApp</small>
                 <strong>0316 4387851</strong>
@@ -1190,7 +1201,7 @@
 
             <!-- Email address: update both the mailto and visible address if it changes. -->
             <a class="contact-item" href="mailto:0naumanali98@gmail.com">
-              <span class="contact-icon">✉️</span>
+              <span class="contact-icon"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" loading="lazy"></span>
               <span>
                 <small>Email</small>
                 <strong>0naumanali98@gmail.com</strong>
@@ -1199,18 +1210,15 @@
 
             <div class="social-buttons">
               <a class="social-btn" href="https://wa.me/923164387851" target="_blank" rel="noopener">
-                <!-- WhatsApp SVG logo -->
-                <svg viewBox="0 0 32 32" aria-hidden="true">
-                  <path d="M16.02 3C8.85 3 3.02 8.78 3.02 15.9c0 2.28.61 4.51 1.77 6.47L3 29l6.83-1.78a13.1 13.1 0 0 0 6.19 1.55h.01c7.17 0 13-5.79 13-12.9 0-3.45-1.35-6.69-3.81-9.13A12.9 12.9 0 0 0 16.02 3Zm0 23.58h-.01c-1.88 0-3.73-.5-5.34-1.45l-.38-.22-4.05 1.05 1.08-3.92-.25-.4a10.65 10.65 0 0 1-1.64-5.74c0-5.87 4.8-10.65 10.7-10.65 2.85 0 5.53 1.11 7.54 3.12a10.57 10.57 0 0 1 3.13 7.53c0 5.87-4.8 10.65-10.78 10.65Zm5.87-7.97c-.32-.16-1.9-.93-2.2-1.03-.3-.11-.51-.16-.73.16-.22.32-.84 1.03-1.03 1.24-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.59-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.73-1.74-1-2.38-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.67 0 1.58 1.16 3.1 1.32 3.31.16.21 2.28 3.46 5.52 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.77 2.17-1.51.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.62-.37Z"/>
-                </svg>
+                <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" loading="lazy">
                 WhatsApp
               </a>
-
               <a class="social-btn linkedin"
                  href="https://www.linkedin.com/in/syed-nauman-ali-19760b17b"
                  target="_blank"
                  rel="noopener">
-                in LinkedIn
+                <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="" loading="lazy">
+                LinkedIn
               </a>
             </div>
           </div>
@@ -1240,9 +1248,7 @@
        target="_blank"
        rel="noopener"
        aria-label="Chat with me on WhatsApp">
-      <svg viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16.02 3C8.85 3 3.02 8.78 3.02 15.9c0 2.28.61 4.51 1.77 6.47L3 29l6.83-1.78a13.1 13.1 0 0 0 6.19 1.55h.01c7.17 0 13-5.79 13-12.9 0-3.45-1.35-6.69-3.81-9.13A12.9 12.9 0 0 0 16.02 3Zm0 23.58h-.01c-1.88 0-3.73-.5-5.34-1.45l-.38-.22-4.05 1.05 1.08-3.92-.25-.4a10.65 10.65 0 0 1-1.64-5.74c0-5.87 4.8-10.65 10.7-10.65 2.85 0 5.53 1.11 7.54 3.12a10.57 10.57 0 0 1 3.13 7.53c0 5.87-4.8 10.65-10.78 10.65Zm5.87-7.97c-.32-.16-1.9-.93-2.2-1.03-.3-.11-.51-.16-.73.16-.22.32-.84 1.03-1.03 1.24-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.59-.96-.85-1.61-1.9-1.8-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.73-1.74-1-2.38-.26-.62-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.67 0 1.58 1.16 3.1 1.32 3.31.16.21 2.28 3.46 5.52 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.77 2.17-1.51.27-.75.27-1.39.19-1.52-.08-.13-.29-.21-.62-.37Z"/>
-      </svg>
+      <img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" alt="" loading="lazy">
     </a>
 
     <!-- Bottom page navigation -->
