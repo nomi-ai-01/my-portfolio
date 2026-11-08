@@ -102,6 +102,9 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
 .social-btn:hover{transform:translateY(-3px)}
 .social-btn.linkedin{background:#e8f4ff;color:#1769aa}
 .social-btn img,.social-btn svg{display:block;width:18px;height:18px;flex:0 0 18px}
+.page-figure{display:flex;justify-content:center;align-items:center;position:relative;margin-top:26px;min-height:300px}
+.page-figure::before{content:"";position:absolute;width:min(270px,75vw);height:min(270px,75vw);border-radius:50%;background:linear-gradient(145deg,#ffe1e9,#e6e0ff);left:50%;top:50%;transform:translate(-50%,-50%)}
+.page-figure-img{position:relative;z-index:1;width:min(260px,72vw);max-height:310px;object-fit:contain;animation:gentleFloat 3.8s ease-in-out infinite}
 @keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .bottom-nav{position:fixed;z-index:30;left:50%;bottom:17px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:50px;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.95);box-shadow:0 12px 35px rgba(49,36,76,.16);backdrop-filter:blur(14px)}
 .nav-dot{width:10px;height:10px;border:0;border-radius:50px;background:#d8d0e5;transition:.25s ease}
@@ -112,7 +115,7 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
 .back-btn{color:var(--ink);background:#fff;border:1px solid var(--border)!important}
 .next-btn{color:#fff;background:var(--purple);box-shadow:0 8px 20px rgba(115,87,217,.2);margin-left:auto}
 .page-controls button:hover{transform:translateY(-3px)}
-#walker{position:fixed;z-index:0;width:135px;height:auto;left:-180px;bottom:16px;object-fit:contain;display:none;pointer-events:none}
+#walker{position:fixed;z-index:35;width:135px;height:auto;left:-180px;bottom:16px;object-fit:contain;display:none;pointer-events:none}
 #walker.walking{display:block;animation:walkAcross 1.35s linear forwards,walkBob .28s ease-in-out infinite alternate}
 @keyframes walkAcross{from{left:-180px}to{left:calc(100vw + 180px)}}
 @keyframes walkBob{from{margin-bottom:0}to{margin-bottom:8px}}
@@ -210,7 +213,7 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
 <!-- PAGE 3: PROJECTS (character: peek2.png, winking) -->
 <section class="page" id="projects">
   <div class="eyebrow"><span class="eyebrow-dot"></span> THINGS I'VE BUILT</div>
-  <img src="images/peek2.png" alt="" class="section-peek-character" aria-hidden="true">
+  <img src="images/peek2.png" alt="" class="section-peek-character" aria-hidden="true" onerror="this.onerror=null;this.src='images/peek.png'">
   <h2 class="section-heading peek-heading">Featured <span>Projects</span></h2>
   <p class="section-subtitle">A selection of websites and digital projects I've worked on. Explore them and see what I've been creating.</p>
   <div class="projects-grid">
@@ -245,6 +248,7 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
       <a class="project-link" href="https://nauman-ai-786.github.io/text-to-speech/" target="_blank" rel="noopener">Visit Live Site ↗</a></div>
     </article>
   </div>
+  <div class="page-figure"><img src="images/point.png" alt="Nauman pointing at the projects" class="page-figure-img"></div>
   <div class="page-controls">
     <button class="back-btn" onclick="previousPage()">← Back</button>
     <button class="next-btn" onclick="nextPage()">My Services →</button>
@@ -254,7 +258,7 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
 <!-- PAGE 4: SERVICES (character: peek3.png, thinking) -->
 <section class="page" id="services">
   <div class="eyebrow"><span class="eyebrow-dot"></span> WHAT I CAN DO FOR YOU</div>
-  <img src="images/peek3.png" alt="" class="section-peek-character" aria-hidden="true">
+  <img src="images/peek3.png" alt="" class="section-peek-character" aria-hidden="true" onerror="this.onerror=null;this.src='images/peek.png'">
   <h2 class="section-heading peek-heading">My <span>Services</span></h2>
   <p class="section-subtitle">Practical digital solutions to help your business build its online presence, connect with customers and save time.</p>
   <div class="services-grid">
@@ -275,6 +279,7 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
       <h3>Facebook Auto-Posting</h3><p>Streamline your social media publishing with automated Facebook content posting workflows.</p>
     </article>
   </div>
+  <div class="page-figure"><img src="images/think.png" alt="Nauman thinking" class="page-figure-img"></div>
   <div class="page-controls">
     <button class="back-btn" onclick="previousPage()">← Back</button>
     <button class="next-btn" onclick="nextPage()">Contact Me →</button>
