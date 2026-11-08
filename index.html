@@ -4,39 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#fff8ef">
-<meta name="description" content="Nauman — Websites, WhatsApp Chatbots and n8n Automation.">
-<title>Nauman | Creative Developer & Automation</title>
+<title>Nauman | Web Developer, WhatsApp Chatbots & n8n Automation</title>
+<meta name="description" content="Nauman builds responsive websites, WhatsApp order chatbots and n8n automations for businesses in Pakistan. See live projects, packages and get in touch.">
+<link rel="canonical" href="https://nomi-ai-01.github.io/my-portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nauman | Web Developer, WhatsApp Chatbots & n8n Automation">
+<meta property="og:description" content="Websites, WhatsApp order bots and n8n automation that help businesses grow.">
+<meta property="og:url" content="https://nomi-ai-01.github.io/my-portfolio/">
+<meta property="og:image" content="https://nomi-ai-01.github.io/my-portfolio/images/peek.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%237357d9'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EN%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nauman","jobTitle":"Web Developer & Automation Specialist","url":"https://nomi-ai-01.github.io/my-portfolio/","sameAs":["https://www.linkedin.com/in/syed-nauman-ali-19760b17b"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff8ef;--bg-soft:#fff0e2;--ink:#29233b;--muted:#766d7d;--purple:#7357d9;--purple-dark:#5139ad;--pink:#ff8caf;--blue:#8bd8ed;--border:rgba(41,35,59,.09);--shadow:0 16px 45px rgba(65,43,99,.10);--radius:28px}
+:root{--bg:#fff8ef;--bg-soft:#fff0e2;--ink:#29233b;--muted:#6b6275;--purple:#7357d9;--purple-dark:#5139ad;--pink:#ff8caf;--blue:#8bd8ed;--card:#fff;--navbg:rgba(255,255,255,.92);--border:rgba(41,35,59,.09);--shadow:0 16px 45px rgba(65,43,99,.10);--radius:28px;color-scheme:light}
+[data-theme=dark]{--bg:#16131e;--bg-soft:#241f31;--ink:#f3effa;--muted:#b0a9bd;--purple:#9a82ff;--purple-dark:#b7a5ff;--card:#221d2f;--navbg:rgba(34,29,47,.92);--border:rgba(255,255,255,.1);--shadow:0 16px 45px rgba(0,0,0,.35);color-scheme:dark}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 10% 10%,rgba(255,214,107,.18),transparent 25%),radial-gradient(circle at 90% 80%,rgba(139,216,237,.18),transparent 28%),var(--bg);color:var(--ink);font-family:'Poppins',sans-serif}
-button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+button,a,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--purple);outline-offset:3px;border-radius:12px}
+[hidden]{display:none!important}
+.skip{position:absolute;left:12px;top:-60px;z-index:99;background:var(--purple);color:#fff;padding:10px 16px;border-radius:50px}.skip:focus{top:10px}
 .app{min-height:100vh;position:relative;overflow:hidden}
-.blob{position:fixed;z-index:0;border-radius:50%;pointer-events:none;filter:blur(1px)}
+.blob{position:fixed;z-index:0;border-radius:50%;pointer-events:none}
 .blob-one{width:190px;height:190px;background:var(--pink);top:15%;left:-115px;opacity:.13}
 .blob-two{width:230px;height:230px;background:var(--blue);right:-145px;bottom:8%;opacity:.18}
 .topbar{position:relative;z-index:20;width:min(1120px,calc(100% - 36px));margin:18px auto 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top-actions{display:flex;gap:8px}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Baloo 2',cursive;font-size:1.45rem;font-weight:800;letter-spacing:-.5px}
 .brand-mark{width:39px;height:39px;display:grid;place-items:center;border-radius:14px;color:#fff;background:linear-gradient(135deg,var(--purple),var(--pink));box-shadow:0 7px 18px rgba(115,87,217,.25)}
-.home-btn{border:1px solid var(--border);background:rgba(255,255,255,.8);color:var(--ink);border-radius:50px;padding:9px 15px;font-size:.8rem;font-weight:600;box-shadow:0 5px 16px rgba(65,43,99,.05);transition:.2s ease}
-.home-btn:hover{transform:translateY(-2px);background:#fff}
+.home-btn{border:1px solid var(--border);background:var(--card);color:var(--ink);border-radius:50px;padding:9px 15px;font-size:.8rem;font-weight:600;box-shadow:0 5px 16px rgba(65,43,99,.05);transition:.2s ease}
+.home-btn:hover{transform:translateY(-2px)}
 .pages{position:relative;z-index:1;width:min(1120px,calc(100% - 36px));min-height:calc(100vh - 100px);margin:0 auto;padding:28px 0 100px}
 .page{display:none;min-height:70vh;position:relative;animation:pageEnter .55s ease both}
 .page.active{display:flex;flex-direction:column}
-@keyframes pageEnter{from{opacity:0;transform:none}to{opacity:1;transform:none}}
-@keyframes pageBack{from{opacity:0;transform:none}to{opacity:1;transform:none}}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;width:fit-content;padding:8px 15px;border-radius:50px;background:#fff;color:var(--purple-dark);border:1px solid rgba(115,87,217,.13);box-shadow:0 6px 20px rgba(65,43,99,.05);font-size:.78rem;font-weight:700;letter-spacing:.3px}
+@keyframes pageEnter{from{opacity:0}to{opacity:1}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;width:fit-content;padding:8px 15px;border-radius:50px;background:var(--card);color:var(--purple-dark);border:1px solid var(--border);box-shadow:0 6px 20px rgba(65,43,99,.05);font-size:.78rem;font-weight:700;letter-spacing:.3px}
 .eyebrow-dot{width:8px;height:8px;background:#65c98a;border-radius:50%;box-shadow:0 0 0 4px rgba(101,201,138,.14)}
 h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
 .section-heading{font-size:clamp(2.5rem,6vw,4.4rem);font-weight:800;letter-spacing:-1.5px;margin:18px 0 12px}
 .section-heading span{color:var(--purple)}
 .section-peek-character{display:block;width:clamp(230px,65vw,340px);height:auto;max-height:250px;object-fit:contain;margin:8px auto -42px;position:relative;z-index:1;pointer-events:none;animation:gentleFloat 3.5s ease-in-out infinite}
-.peek-heading{position:relative;z-index:2;width:fit-content;max-width:100%;margin-top:0}
+.peek-heading{position:relative;z-index:2;width:fit-content;max-width:100%}
 .section-subtitle{max-width:650px;color:var(--muted);line-height:1.8;font-size:.98rem}
+.sub-heading{font-size:1.9rem;margin:42px 0 6px}
 #welcome{justify-content:center;align-items:center;text-align:center;padding-top:25px;padding-bottom:55px}
 .welcome-content{width:100%;max-width:850px;position:relative}
 .welcome-tagline{color:var(--purple-dark);font-weight:700;font-size:clamp(.9rem,2vw,1.08rem);margin-bottom:8px;position:relative;z-index:1}
@@ -45,152 +59,187 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
 .welcome-title .name{display:block;color:var(--purple);text-shadow:3px 4px 0 rgba(255,140,175,.2)}
 .welcome-description{color:var(--muted);font-size:clamp(1rem,2.2vw,1.2rem);line-height:1.8;max-width:620px;margin:18px auto 25px}
 .welcome-description strong{color:var(--ink)}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px}
+.stats span{padding:8px 15px;border-radius:50px;background:var(--card);border:1px solid var(--border);font-size:.8rem;font-weight:600;color:var(--muted)}
+.stats b{color:var(--purple)}
 .button-row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-.primary-btn,.secondary-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:50px;padding:13px 23px;font-size:.9rem;font-weight:700;transition:transform .2s ease,box-shadow .2s ease}
-.primary-btn{color:#fff;background:linear-gradient(135deg,var(--purple),#9479f2);box-shadow:0 10px 24px rgba(115,87,217,.27)}
-.secondary-btn{color:var(--ink);background:#fff;border:1px solid var(--border);box-shadow:0 8px 20px rgba(65,43,99,.06)}
-.secondary-btn img{width:20px;height:20px;display:block}
+.primary-btn,.secondary-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:50px;padding:13px 23px;font-size:.9rem;font-weight:700;transition:transform .2s ease}
+.primary-btn{color:#fff;background:linear-gradient(135deg,#7357d9,#9479f2);box-shadow:0 10px 24px rgba(115,87,217,.27)}
+.secondary-btn{color:var(--ink);background:var(--card);border:1px solid var(--border);box-shadow:0 8px 20px rgba(65,43,99,.06)}
+.secondary-btn img{width:20px;height:20px}
 .primary-btn:hover,.secondary-btn:hover{transform:translateY(-3px)}
-.content-card{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);box-shadow:var(--shadow)}
+.content-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
 .about-layout{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:35px;margin-top:22px}
 .about-card{padding:clamp(24px,4vw,38px)}
 .about-card p{color:var(--muted);line-height:1.95;font-size:.96rem;margin-top:13px}
 .about-card p strong{color:var(--ink)}
-.skill-title{margin:27px 0 13px;font-family:'Baloo 2',cursive;font-size:1.45rem}
+.skill-title{margin:27px 0 13px;font-size:1.45rem}
 .skills{display:flex;flex-wrap:wrap;gap:10px}
-.skill{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:50px;background:var(--bg-soft);color:#6a4d9c;font-size:.82rem;font-weight:700;border:1px solid rgba(115,87,217,.08);animation:skillPop .55s both;transition:transform .2s ease}
-.skill img{width:16px;height:16px;display:block;object-fit:contain}
+.skill{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:50px;background:#f2f0ff;color:#6952b5;font-size:.82rem;font-weight:700;animation:skillPop .55s both;transition:transform .2s ease}
+.skill img{width:16px;height:16px;object-fit:contain}
 .skill:nth-child(3n+1){background:#fff0f4;color:#bd5478}
 .skill:nth-child(3n+2){background:#edf8ff;color:#367d9d}
-.skill:nth-child(3n){background:#f2f0ff;color:#6952b5}
 .skill:hover{transform:translateY(-4px) rotate(-2deg)}
-@keyframes skillPop{from{opacity:0;transform:translateY(12px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes skillPop{from{opacity:0;transform:translateY(12px) scale(.9)}to{opacity:1;transform:none}}
 .about-character-wrap,.contact-character-wrap{min-height:370px;display:flex;align-items:center;justify-content:center;position:relative}
 .about-character-wrap::before,.contact-character-wrap::before{content:"";position:absolute;width:290px;height:290px;max-width:90%;border-radius:50%;background:linear-gradient(145deg,#ffe1e9,#e6e0ff)}
-.contact-character-wrap::before{background:linear-gradient(145deg,#e6e0ff,#dff6ff)}
 .about-character,.contact-character{position:relative;z-index:1;width:min(100%,330px);max-height:390px;object-fit:contain;animation:gentleFloat 3.8s ease-in-out infinite}
-.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:28px;padding-bottom:20px}
-.project-card{overflow:hidden;background:#fff;border-radius:24px;border:1px solid var(--border);box-shadow:0 12px 30px rgba(65,43,99,.07);transition:transform .25s ease,box-shadow .25s ease}
-.project-card:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(65,43,99,.13)}
+.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:28px}
+.project-card{overflow:hidden;background:var(--card);border-radius:24px;border:1px solid var(--border);box-shadow:0 12px 30px rgba(65,43,99,.07);transition:transform .25s ease,box-shadow .25s ease}
+.project-card:hover{transform:translateY(-6px)}
 .project-image{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center;display:block;background:#f2edf8}
 .project-info{padding:20px 21px 22px}
 .project-info h3{font-size:1.55rem;margin-bottom:7px}
-.project-info p{color:var(--muted);font-size:.87rem;line-height:1.7;min-height:50px;margin-bottom:15px}
-.project-link{display:inline-flex;align-items:center;gap:8px;border-radius:50px;padding:10px 16px;color:#fff;background:var(--purple);font-size:.8rem;font-weight:700;transition:.2s ease}
-.project-link:hover{background:var(--purple-dark);transform:translateY(-2px)}
+.project-info p{color:var(--muted);font-size:.87rem;line-height:1.7;margin-bottom:12px}
+.project-info .did{font-size:.82rem}
+.project-info .did b{color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+.tags span{padding:4px 11px;border-radius:50px;background:var(--bg-soft);color:var(--purple-dark);font-size:.72rem;font-weight:700}
+.project-link{display:inline-flex;align-items:center;gap:8px;border-radius:50px;padding:10px 16px;color:#fff;background:#7357d9;font-size:.8rem;font-weight:700;transition:.2s ease}
+.project-link:hover{background:#5139ad;transform:translateY(-2px)}
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px}
+.demo-card{padding:18px;border-radius:24px;background:var(--card);border:1px solid var(--border)}
+.demo-card h3{font-size:1.25rem;margin-bottom:10px}
+.demo-card video,.demo-card iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:16px;background:#000}
+.demo-card p{color:var(--muted);font-size:.88rem;line-height:1.7;margin-bottom:14px}
 .services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}
-.service-card{padding:25px;border-radius:24px;background:#fff;border:1px solid var(--border);box-shadow:0 10px 28px rgba(65,43,99,.06);transition:transform .2s ease}
-.service-card:hover{transform:translateY(-5px) rotate(-.5deg)}
+.service-card{padding:25px;border-radius:24px;background:var(--card);border:1px solid var(--border);box-shadow:0 10px 28px rgba(65,43,99,.06);transition:transform .2s ease}
+.service-card:hover{transform:translateY(-5px)}
 .service-icon{width:55px;height:55px;display:grid;place-items:center;border-radius:18px;margin-bottom:15px;background:#f1edff}
-.service-icon img{display:block;width:30px;height:30px;object-fit:contain}
+.service-icon img{width:30px;height:30px;object-fit:contain}
 .service-card:nth-child(2) .service-icon{background:#e9f8ef}
 .service-card:nth-child(3) .service-icon{background:#fff0f4}
 .service-card:nth-child(4) .service-icon{background:#fff5dd}
 .service-card h3{font-size:1.45rem;margin-bottom:8px}
 .service-card p{color:var(--muted);line-height:1.75;font-size:.88rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;counter-reset:s}
+.step{padding:20px;border-radius:22px;background:var(--card);border:1px solid var(--border);counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--purple);color:#fff;font-weight:700;margin-bottom:12px}
+.step h3{font-size:1.2rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.84rem;line-height:1.65}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.price-card{padding:26px;border-radius:26px;background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column}
+.price-card.featured{border:2px solid var(--purple);box-shadow:var(--shadow)}
+.badge{width:fit-content;padding:4px 12px;border-radius:50px;background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;margin-bottom:10px}
+.price-card h3{font-size:1.5rem}
+.price{font-family:'Baloo 2',cursive;font-size:1.7rem;font-weight:800;color:var(--purple);margin:6px 0 12px}
+.price-card ul{list-style:none;color:var(--muted);font-size:.86rem;line-height:1.7;margin-bottom:20px;flex:1}
+.price-card li::before{content:"✓ ";color:#65c98a;font-weight:700}
+.price-card .primary-btn{width:100%}
+.price-note{margin-top:14px;color:var(--muted);font-size:.8rem}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px}
+.review{padding:22px;border-radius:24px;background:var(--card);border:1px solid var(--border)}
+.review p{color:var(--muted);line-height:1.8;font-size:.9rem;margin-bottom:12px}
+.review strong{display:block;font-size:.9rem}
+.review small{color:var(--muted)}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:28px;margin-top:25px}
 .contact-card{padding:clamp(24px,4vw,38px)}
 .contact-card h3{font-size:1.8rem;margin-bottom:10px}
 .contact-card>p{color:var(--muted);line-height:1.8;margin-bottom:22px;font-size:.92rem}
 .contact-item{display:flex;align-items:center;gap:13px;padding:14px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere}
 .contact-icon{flex:0 0 43px;width:43px;height:43px;display:grid;place-items:center;border-radius:14px;background:#f1edff}
-.contact-icon img{display:block;width:23px;height:23px;object-fit:contain}
+.contact-icon img{width:23px;height:23px;object-fit:contain}
 .contact-item small{display:block;color:var(--muted);font-size:.72rem;margin-bottom:3px}
 .contact-item strong{font-size:.88rem}
 .social-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.social-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:50px;padding:11px 17px;background:#f1edff;color:var(--purple-dark);font-size:.82rem;font-weight:700;transition:.2s ease}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:50px;padding:11px 17px;background:#f1edff;color:#5139ad;font-size:.82rem;font-weight:700;transition:.2s ease}
 .social-btn:hover{transform:translateY(-3px)}
 .social-btn.linkedin{background:#e8f4ff;color:#1769aa}
-.social-btn img,.social-btn svg{display:block;width:18px;height:18px;flex:0 0 18px}
+.social-btn img,.social-btn svg{width:18px;height:18px;flex:0 0 18px}
+.form-card{padding:clamp(24px,4vw,38px);margin-top:26px}
+.form-card h3{font-size:1.7rem;margin-bottom:16px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:.82rem;font-weight:600}
+.field.full{grid-column:1/-1}
+.field input,.field select,.field textarea{padding:12px 14px;border-radius:14px;border:1px solid var(--border);background:var(--bg);color:var(--ink);font-weight:400}
+.field textarea{min-height:110px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+.form-status{margin-top:12px;font-size:.88rem;min-height:1.2em;color:var(--purple-dark);font-weight:600}
 .page-figure{display:flex;justify-content:center;align-items:center;position:relative;margin-top:26px;min-height:300px}
 .page-figure::before{content:"";position:absolute;width:min(270px,75vw);height:min(270px,75vw);border-radius:50%;background:linear-gradient(145deg,#ffe1e9,#e6e0ff);left:50%;top:50%;transform:translate(-50%,-50%)}
 .page-figure-img{position:relative;z-index:1;width:min(260px,72vw);max-height:310px;object-fit:contain;animation:gentleFloat 3.8s ease-in-out infinite}
 @keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.bottom-nav{position:fixed;z-index:30;left:50%;bottom:17px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:50px;background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.95);box-shadow:0 12px 35px rgba(49,36,76,.16);backdrop-filter:blur(14px)}
-.nav-dot{width:10px;height:10px;border:0;border-radius:50px;background:#d8d0e5;transition:.25s ease}
+.bottom-nav{position:fixed;z-index:30;left:50%;bottom:17px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:50px;background:var(--navbg);border:1px solid var(--border);box-shadow:0 12px 35px rgba(49,36,76,.16);backdrop-filter:blur(14px)}
+.nav-dot{width:10px;height:10px;border:0;border-radius:50px;background:#c9c0d8;transition:.25s ease}
 .nav-dot.active{width:28px;background:var(--purple)}
-.nav-label{color:var(--muted);font-size:.72rem;font-weight:700;margin:0 5px;white-space:nowrap}
+.nav-label{color:var(--muted);font-size:.78rem;font-weight:700;margin:0 5px;white-space:nowrap}
 .page-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:30px}
-.page-controls button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:50px;padding:12px 20px;font-size:.84rem;font-weight:700;transition:.2s ease}
-.back-btn{color:var(--ink);background:#fff;border:1px solid var(--border)!important}
-.next-btn{color:#fff;background:var(--purple);box-shadow:0 8px 20px rgba(115,87,217,.2);margin-left:auto}
+.page-controls button{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:50px;padding:12px 20px;font-size:.84rem;font-weight:700;transition:.2s ease}
+.back-btn{color:var(--ink);background:var(--card);border:1px solid var(--border)!important}
+.next-btn{color:#fff;background:#7357d9;box-shadow:0 8px 20px rgba(115,87,217,.2);margin-left:auto}
 .page-controls button:hover{transform:translateY(-3px)}
-#walker{position:fixed;z-index:35;width:135px;height:auto;left:-180px;bottom:16px;object-fit:contain;display:none;pointer-events:none}
+#walker{position:fixed;z-index:35;width:135px;height:auto;left:-180px;bottom:16px;display:none;pointer-events:none}
 #walker.walking{display:block;animation:walkAcross 1.35s linear forwards,walkBob .28s ease-in-out infinite alternate}
 @keyframes walkAcross{from{left:-180px}to{left:calc(100vw + 180px)}}
 @keyframes walkBob{from{margin-bottom:0}to{margin-bottom:8px}}
 .whatsapp-float{position:fixed;z-index:40;right:20px;bottom:22px;width:54px;height:54px;display:grid;place-items:center;border-radius:50%;background:#25D366;box-shadow:0 8px 22px rgba(37,211,102,.35);transition:transform .2s ease}
 .whatsapp-float:hover{transform:scale(1.08)}
-.whatsapp-float img{width:29px;height:29px;display:block;object-fit:contain}
-.footer-note{text-align:center;color:#9a91a2;font-size:.72rem;padding:20px 0 5px}
+.whatsapp-float img{width:29px;height:29px}
+.footer-note{text-align:center;color:var(--muted);font-size:.75rem;padding:20px 0 5px}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:1fr}}
 @media(max-width:760px){
 .topbar{width:calc(100% - 26px);margin-top:12px}
 .pages{width:calc(100% - 30px);padding-top:22px;padding-bottom:125px}
-.about-layout,.contact-layout{grid-template-columns:1fr}
+.about-layout,.contact-layout,.form-grid{grid-template-columns:1fr}
 .about-character-wrap,.contact-character-wrap{min-height:310px}
 .about-character,.contact-character{width:min(280px,88vw);max-height:300px}
 .about-character-wrap::before,.contact-character-wrap::before{width:min(260px,82vw);height:min(260px,82vw)}
 .projects-grid,.services-grid{grid-template-columns:1fr;gap:16px}
-.project-info p{min-height:0}
-.page-controls{padding-top:25px}
 .bottom-nav{bottom:12px;gap:7px;padding:9px 11px}
-.nav-label{font-size:.65rem}
-/* WhatsApp button sits in the bottom bar row so it never covers Next/Back buttons */
 .whatsapp-float{width:46px;height:46px;right:12px;bottom:13px}
 .whatsapp-float img{width:25px;height:25px}
 .welcome-title{letter-spacing:-1.5px}
 .section-peek-character{margin-bottom:-38px}
-.welcome-description{max-width:480px}
 .page{min-height:72vh}}
 @media(max-width:420px){
-.brand{font-size:1.2rem}
-.brand-mark{width:34px;height:34px;border-radius:12px}
+.brand{font-size:1.2rem}.brand-mark{width:34px;height:34px;border-radius:12px}
 .home-btn{padding:8px 11px;font-size:.72rem}
-.section-heading{font-size:2.65rem}
-.welcome-title{font-size:3.15rem}
+.section-heading{font-size:2.65rem}.welcome-title{font-size:3.15rem}
+.steps{grid-template-columns:1fr}
 .page-controls button{padding:11px 15px;font-size:.78rem}
 .nav-label{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="app">
-<div class="blob blob-one"></div>
-<div class="blob blob-two"></div>
+<div class="blob blob-one"></div><div class="blob blob-two"></div>
 
 <header class="topbar">
-  <a class="brand" href="#" onclick="goHome(); return false;" aria-label="Nauman home"><span class="brand-mark">N</span><span>Nauman.</span></a>
-  <div class="top-actions"><button class="home-btn" onclick="goHome()">⌂ Home</button></div>
+  <a class="brand" href="#welcome" aria-label="Nauman home"><span class="brand-mark">N</span><span>Nauman.</span></a>
+  <div class="top-actions">
+    <button class="home-btn" id="themeBtn" aria-label="Switch dark mode">🌙</button>
+    <button class="home-btn" onclick="goHome()">⌂ Home</button>
+  </div>
 </header>
 
-<main class="pages">
+<main class="pages" id="main">
 
-<!-- PAGE 1: WELCOME (character: peek.png) -->
 <section class="page active" id="welcome">
   <div class="welcome-content">
-    <div class="welcome-tagline">Creative Developer · Chatbot Builder · Automation</div>
+    <div class="welcome-tagline">Web Developer · WhatsApp Chatbots · n8n Automation</div>
     <img src="images/peek.png" alt="Nauman character peeking over the welcome heading" class="peek-character">
     <h1 class="welcome-title">Hi, I'm <span class="name">Nauman 👋</span></h1>
-    <p class="welcome-description">I build <strong>beautiful websites</strong>, <strong>smart WhatsApp chatbots</strong> and <strong>powerful n8n automations</strong> that help businesses grow.</p>
+    <p class="welcome-description">I build <strong>fast, beautiful websites</strong>, <strong>WhatsApp order chatbots</strong> and <strong>n8n automations</strong> that save time and bring in more customers.</p>
     <div class="button-row">
-      <button class="primary-btn" onclick="nextPage()">Explore My Work <span>→</span></button>
-      <a class="secondary-btn" href="https://wa.me/923164387851" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" onerror="this.remove()"> Let's Talk</a>
+      <button class="primary-btn" onclick="nextPage()">Explore My Work →</button>
+      <a class="secondary-btn" id="waHero" href="#" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" onerror="this.remove()"> Chat on WhatsApp</a>
     </div>
+    <div class="stats" id="stats"></div>
   </div>
 </section>
 
-<!-- PAGE 2: ABOUT -->
 <section class="page" id="about">
   <div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE ABOUT ME</div>
   <h2 class="section-heading">Who is <span>Nauman?</span></h2>
   <div class="about-layout">
     <div class="content-card about-card">
-      <p>Hey! I'm Nauman, a creative web developer and automation enthusiast. I enjoy turning ideas into clean, useful and engaging digital experiences.</p>
-      <p>From responsive websites and online catalogues to WhatsApp chatbots and workflow automation, I love building practical solutions that make everyday work easier.</p>
-      <p>My focus is on creating projects that are <strong>simple to use, visually appealing and genuinely helpful.</strong></p>
+      <p>Hey! I'm Nauman, a web developer and automation builder. I turn business ideas into clean, useful websites and tools that people actually enjoy using.</p>
+      <p>From responsive websites and online catalogues to WhatsApp chatbots and workflow automation, I build practical solutions that make everyday work easier.</p>
+      <p>My focus is on projects that are <strong>simple to use, good-looking and genuinely helpful.</strong></p>
       <h3 class="skill-title">My Skills &amp; Tools</h3>
-      <!-- Logos load from the internet; if one fails it simply disappears. -->
-      <div class="skills" id="skills">
+      <div class="skills">
         <span class="skill"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="" onerror="this.remove()">HTML</span>
         <span class="skill"><img src="https://cdn.simpleicons.org/css3/1572B6" alt="" onerror="this.remove()">CSS</span>
         <span class="skill"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" onerror="this.remove()">JavaScript</span>
@@ -198,189 +247,222 @@ h1,h2,h3{font-family:'Baloo 2',cursive;line-height:1.08}
         <span class="skill"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" onerror="this.remove()">WhatsApp Chatbots</span>
         <span class="skill"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="" onerror="this.remove()">n8n Automation</span>
         <span class="skill">API Integration</span>
+        <span class="skill">Facebook Graph API</span>
         <span class="skill">AI Tools</span>
         <span class="skill"><img src="https://cdn.simpleicons.org/github/181717" alt="" onerror="this.remove()">GitHub Pages</span>
       </div>
     </div>
     <div class="about-character-wrap"><img src="images/stand.png" alt="Nauman standing character" class="about-character"></div>
   </div>
-  <div class="page-controls">
-    <button class="back-btn" onclick="previousPage()">← Back</button>
-    <button class="next-btn" onclick="nextPage()">My Projects →</button>
-  </div>
 </section>
 
-<!-- PAGE 3: PROJECTS (character: peek2.png, winking) -->
 <section class="page" id="projects">
   <div class="eyebrow"><span class="eyebrow-dot"></span> THINGS I'VE BUILT</div>
   <img src="images/peek2.png" alt="" class="section-peek-character" aria-hidden="true" onerror="this.onerror=null;this.src='images/peek.png'">
   <h2 class="section-heading peek-heading">Featured <span>Projects</span></h2>
-  <p class="section-subtitle">A selection of websites and digital projects I've worked on. Explore them and see what I've been creating.</p>
-  <div class="projects-grid">
-    <article class="project-card">
-      <img src="images/navaar.jpg" alt="Navaar Studio website preview" class="project-image" loading="lazy">
-      <div class="project-info"><h3>Navaar Studio</h3><p>A creative studio website with a polished design and a modern online presence.</p>
-      <a class="project-link" href="https://nauman-ai-786.github.io/Navaar-studio/" target="_blank" rel="noopener">Visit Live Site ↗</a></div>
-    </article>
-    <article class="project-card">
-      <img src="images/azan.jpg" alt="Azan Garments website preview" class="project-image" loading="lazy">
-      <div class="project-info"><h3>Azan Garments</h3><p>A kids clothing store catalogue in Lahore, featuring product filters and convenient WhatsApp ordering.</p>
-      <a class="project-link" href="https://nauman-ai-786.github.io/azan-garments-org/" target="_blank" rel="noopener">Visit Live Site ↗</a></div>
-    </article>
-    <article class="project-card">
-      <img src="images/iqra.jpg" alt="Iqra Tailor website preview" class="project-image" loading="lazy">
-      <div class="project-info"><h3>Iqra Tailor</h3><p>A tailoring shop website with services and easy WhatsApp contact.</p>
-      <a class="project-link" href="https://nauman-ai-786.github.io/iqra-tailor/" target="_blank" rel="noopener">Visit Live Site ↗</a></div>
-    </article>
-    <article class="project-card">
-      <img src="images/cifar100.jpg" alt="CIFAR-100 image recognition project preview" class="project-image" loading="lazy">
-      <div class="project-info"><h3>CIFAR-100 Image Recognition</h3><p>An image recognition project that explores machine learning classification across the CIFAR-100 dataset.</p>
-      <a class="project-link" href="https://naumanrafique646-glitch.github.io/cifar100-image-recognition/" target="_blank" rel="noopener">Visit Live Site ↗</a></div>
-    </article>
-    <article class="project-card">
-      <img src="images/ayesha.jpg" alt="Ayesha Beauty Hub website preview" class="project-image" loading="lazy">
-      <div class="project-info"><h3>Ayesha Beauty Hub</h3><p>A website designed for women, featuring a range of beauty products in a dedicated online collection.</p>
-      <a class="project-link" href="https://nauman-ai-786.github.io/Ayesha-Beauty-Hub/" target="_blank" rel="noopener">Visit Live Site ↗</a></div>
-    </article>
-    <article class="project-card">
-      <img src="images/sukhan.jpg" alt="Sukhan-e-Awaz text-to-speech website preview" class="project-image" loading="lazy">
-      <div class="project-info"><h3>Sukhan-e-Awaz</h3><p>A multilingual text-to-speech website that converts Urdu, Hindi and English text into spoken audio.</p>
-      <a class="project-link" href="https://nauman-ai-786.github.io/text-to-speech/" target="_blank" rel="noopener">Visit Live Site ↗</a></div>
-    </article>
-  </div>
+  <p class="section-subtitle">Real websites and tools built for real businesses. Open any of them live.</p>
+  <div class="projects-grid" id="projectsGrid"></div>
+  <h3 class="sub-heading">Bot &amp; automation demos</h3>
+  <p class="section-subtitle">See how the chatbots and workflows behave before you hire me.</p>
+  <div class="demo-grid" id="demoGrid"></div>
   <div class="page-figure"><img src="images/point.png" alt="Nauman pointing at the projects" class="page-figure-img"></div>
-  <div class="page-controls">
-    <button class="back-btn" onclick="previousPage()">← Back</button>
-    <button class="next-btn" onclick="nextPage()">My Services →</button>
-  </div>
 </section>
 
-<!-- PAGE 4: SERVICES (character: peek3.png, thinking) -->
 <section class="page" id="services">
   <div class="eyebrow"><span class="eyebrow-dot"></span> WHAT I CAN DO FOR YOU</div>
   <img src="images/peek3.png" alt="" class="section-peek-character" aria-hidden="true" onerror="this.onerror=null;this.src='images/peek.png'">
   <h2 class="section-heading peek-heading">My <span>Services</span></h2>
-  <p class="section-subtitle">Practical digital solutions to help your business build its online presence, connect with customers and save time.</p>
-  <div class="services-grid">
-    <article class="service-card">
-      <div class="service-icon"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" loading="lazy"></div>
-      <h3>Website Development</h3><p>Modern, responsive and user-friendly websites designed to showcase your business and services.</p>
-    </article>
-    <article class="service-card">
-      <div class="service-icon"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" loading="lazy"></div>
-      <h3>WhatsApp Order Bot</h3><p>Helpful WhatsApp chatbot experiences that make it easier for customers to ask questions and place orders.</p>
-    </article>
-    <article class="service-card">
-      <div class="service-icon"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" loading="lazy"></div>
-      <h3>n8n Automation</h3><p>Automated workflows that connect your tools, reduce repetitive tasks and help your work run smoothly.</p>
-    </article>
-    <article class="service-card">
-      <div class="service-icon"><img src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook" loading="lazy"></div>
-      <h3>Facebook Auto-Posting</h3><p>Streamline your social media publishing with automated Facebook content posting workflows.</p>
-    </article>
-  </div>
+  <p class="section-subtitle">Practical digital solutions to build your online presence, connect with customers and save time.</p>
+  <div class="services-grid" id="servicesGrid"></div>
+  <h3 class="sub-heading">How we work together</h3>
+  <div class="steps" id="steps"></div>
   <div class="page-figure"><img src="images/think.png" alt="Nauman thinking" class="page-figure-img"></div>
-  <div class="page-controls">
-    <button class="back-btn" onclick="previousPage()">← Back</button>
-    <button class="next-btn" onclick="nextPage()">Contact Me →</button>
-  </div>
 </section>
 
-<!-- PAGE 5: CONTACT -->
+<section class="page" id="pricing">
+  <div class="eyebrow"><span class="eyebrow-dot"></span> PACKAGES &amp; FEEDBACK</div>
+  <h2 class="section-heading">Simple <span>Packages</span></h2>
+  <p class="section-subtitle">Pick a starting point. Every project is quoted after a short chat, so you only pay for what you need.</p>
+  <div class="price-grid" id="priceGrid"></div>
+  <p class="price-note">Prices vary with pages, features and deadline. Message me for an exact quote.</p>
+  <h3 class="sub-heading">What clients say</h3>
+  <div class="reviews" id="reviews"></div>
+</section>
+
 <section class="page" id="contact">
   <div class="eyebrow"><span class="eyebrow-dot"></span> LET'S CONNECT</div>
   <h2 class="section-heading">Let's Build Something <span>Great!</span></h2>
-  <p class="section-subtitle">Have a project in mind, need a website or want to automate something? I'd love to hear from you.</p>
+  <p class="section-subtitle">Have a project in mind, need a website or want to automate something? I'll get back to you as soon as I can.</p>
   <div class="contact-layout">
     <div class="content-card contact-card">
       <h3>Get in Touch 👋</h3>
-      <p>Reach out and let's talk about your next idea.</p>
-      <a class="contact-item" href="https://wa.me/923164387851" target="_blank" rel="noopener">
-        <span class="contact-icon"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp" loading="lazy"></span>
+      <p>Choose the way that suits you best.</p>
+      <a class="contact-item" id="waItem" href="#" target="_blank" rel="noopener">
+        <span class="contact-icon"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="WhatsApp"></span>
         <span><small>WhatsApp</small><strong>0316 4387851</strong></span>
       </a>
-      <a class="contact-item" href="mailto:0naumanali98@gmail.com">
-        <span class="contact-icon"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" loading="lazy"></span>
-        <span><small>Email</small><strong>0naumanali98@gmail.com</strong></span>
+      <a class="contact-item" id="mailItem" href="#">
+        <span class="contact-icon"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Email"></span>
+        <span><small>Email</small><strong id="mailText">Send an email</strong></span>
       </a>
       <div class="social-buttons">
-        <a class="social-btn" href="https://wa.me/923164387851" target="_blank" rel="noopener"><img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="" onerror="this.remove()">WhatsApp</a>
         <a class="social-btn linkedin" href="https://www.linkedin.com/in/syed-nauman-ali-19760b17b" target="_blank" rel="noopener">
-          <!-- LinkedIn logo is built into the page (the logo CDN no longer hosts it) -->
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#0A66C2" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+        <a class="social-btn" id="cvBtn" href="#" target="_blank" rel="noopener" hidden download>⬇ Download CV</a>
       </div>
     </div>
     <div class="contact-character-wrap"><img src="images/laptop.png" alt="Nauman working on a laptop" class="contact-character"></div>
   </div>
-  <div class="page-controls">
-    <button class="back-btn" onclick="previousPage()">← Back</button>
-    <button class="next-btn" onclick="goHome()">Back to Home ⌂</button>
-  </div>
+  <form class="content-card form-card" id="leadForm" novalidate>
+    <h3>Tell me about your project</h3>
+    <div class="form-grid">
+      <label class="field">Your name<input name="name" required autocomplete="name"></label>
+      <label class="field">WhatsApp or phone<input name="phone" inputmode="tel" autocomplete="tel"></label>
+      <label class="field full">What do you need?
+        <select name="service"><option>Website</option><option>WhatsApp Order Bot</option><option>n8n Automation</option><option>Facebook Auto-Posting</option><option>Something else</option></select></label>
+      <label class="field full">Message<textarea name="message" required placeholder="Tell me what you want to build and by when."></textarea></label>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </div>
+    <div class="button-row" style="justify-content:flex-start;margin-top:18px"><button class="primary-btn" type="submit">Send message</button></div>
+    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+  </form>
 </section>
 
-<footer class="footer-note">Made with ❤️ by Nauman</footer>
+<footer class="footer-note">© <span id="yr"></span> Nauman · Made with ❤️ in Pakistan</footer>
 </main>
 
-<img id="walker" src="images/walk.png" alt="Character walking to the next page">
-
-<a class="whatsapp-float" href="https://wa.me/923164387851" target="_blank" rel="noopener" aria-label="Chat with me on WhatsApp">
-  <img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" alt="">
-</a>
-
-<nav class="bottom-nav" aria-label="Portfolio pages">
-  <span class="nav-label" id="navLabel">Welcome</span>
-  <button class="nav-dot active" aria-label="Welcome page" onclick="goToPage(0)"></button>
-  <button class="nav-dot" aria-label="About page" onclick="goToPage(1)"></button>
-  <button class="nav-dot" aria-label="Projects page" onclick="goToPage(2)"></button>
-  <button class="nav-dot" aria-label="Services page" onclick="goToPage(3)"></button>
-  <button class="nav-dot" aria-label="Contact page" onclick="goToPage(4)"></button>
-</nav>
+<img id="walker" src="images/walk.png" alt="">
+<a class="whatsapp-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with me on WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" alt=""></a>
+<nav class="bottom-nav" aria-label="Portfolio pages"><span class="nav-label" id="navLabel">Welcome</span></nav>
 </div>
 
 <script>
-const pageIds=["welcome","about","projects","services","contact"];
-const pageNames=["Welcome","About","Projects","Services","Contact"];
-let currentPage=0,isTransitioning=false;
-const walker=document.getElementById("walker");
-const navDots=document.querySelectorAll(".nav-dot");
-const navLabel=document.getElementById("navLabel");
+/* ===== EDIT THIS SECTION ONLY ===== */
+const CONFIG={
+  whatsapp:"923164387851",
+  emailUser:"0naumanali98", emailHost:"gmail.com",
+  formEndpoint:"",            // Formspree URL, e.g. "https://formspree.io/f/xxxxxxx" (empty = form opens WhatsApp)
+  fbPage:"",                  // link of your Facebook page, e.g. "https://facebook.com/yourpage" (shown as a live AI-posting demo)
+  cv:"",                      // e.g. "files/Nauman-CV.pdf" (empty = button hidden)
+  prices:{starter:"",business:"",automation:""},   // e.g. "Rs. 15,000" (empty = "Custom quote")
+  reviews:[                   // add more like this: {name:"Name",role:"Business",text:"Their words"}
+    {name:"Iqra Tailor",role:"Client",text:"I really like my website. It has improved my work a lot. Excellent!"},
+    {name:"Ayesha Beauty Hub",role:"Client",text:"I started my online business from home and needed a website for it. It turned out really well, and I update my daily products on it."}
+  ],
+  demos:[]                    // e.g. [{title:"WhatsApp Order Bot",src:"videos/bot.mp4"}] or a YouTube embed URL
+};
+const PROJECTS=[
+ {t:"Navaar Studio",img:"navaar.jpg",url:"https://nauman-ai-786.github.io/Navaar-studio/",d:"A creative studio website with a polished design and a modern online presence.",did:"Brand-first design and responsive layout.",tags:["HTML","CSS","JavaScript"]},
+ {t:"Azan Garments",img:"azan.jpg",url:"https://nauman-ai-786.github.io/azan-garments-org/",d:"A kids clothing store catalogue in Lahore with product filters and easy WhatsApp ordering.",did:"Product catalogue, filters and one-tap WhatsApp orders.",tags:["Catalogue","Filters","WhatsApp"]},
+ {t:"Iqra Tailor",img:"iqra.jpg",url:"https://nauman-ai-786.github.io/iqra-tailor/",d:"A tailoring shop website with services and easy WhatsApp contact.",did:"Service pages and direct WhatsApp contact.",tags:["Small business","WhatsApp"]},
+ {t:"CIFAR-100 Image Recognition",img:"cifar100.jpg",url:"https://naumanrafique646-glitch.github.io/cifar100-image-recognition/",d:"A machine learning project that classifies images across the CIFAR-100 dataset.",did:"Model showcase and results presentation.",tags:["Machine Learning","Python"]},
+ {t:"Ayesha Beauty Hub",img:"ayesha.jpg",url:"https://nauman-ai-786.github.io/Ayesha-Beauty-Hub/",d:"A website for women featuring a range of beauty products in a dedicated online collection.",did:"Product collection and mobile-friendly shopping layout.",tags:["E-commerce style","Responsive"]},
+ {t:"Sukhan-e-Awaz",img:"sukhan.jpg",url:"https://nauman-ai-786.github.io/text-to-speech/",d:"A multilingual text-to-speech tool that turns Urdu, Hindi and English text into audio.",did:"Speech tool with multi-language support.",tags:["JavaScript","Speech","Urdu"]}
+];
+const SERVICES=[
+ ["html5/E34F26","HTML5","Website Development","Modern, responsive websites that show off your business and work on every phone."],
+ ["whatsapp/25D366","WhatsApp","WhatsApp Order Bot","Chatbots that answer questions and take orders so you never miss a customer."],
+ ["n8n/EA4B71","n8n","n8n Automation","Workflows that connect your tools and remove repetitive tasks."],
+ ["facebook/0866FF","Facebook","AI Facebook Auto-Posting","AI writes the caption, creates the image and publishes to your Facebook page every day."]
+];
+const STEPS=[["Talk","Tell me your idea, goal and deadline on WhatsApp."],["Plan","I send a clear scope, price and timeline."],["Build","I build it and share progress so you can give feedback."],["Launch","I publish it, hand over everything and stay available for support."]];
+const PACKS=[
+ {k:"starter",n:"Starter Website",f:["1–3 page responsive site","WhatsApp contact button","Mobile friendly","Free hosting setup"]},
+ {k:"business",n:"Business Website",f:["Catalogue with filters","WhatsApp ordering","Contact form","Basic SEO and sharing preview"],hot:1},
+ {k:"automation",n:"Bot & Automation",f:["AI Facebook auto-posting","n8n workflows","API integrations","WhatsApp bot on request"]}
+];
+/* ===== END EDIT SECTION ===== */
 
-function showPage(index,direction="next"){
-  document.querySelectorAll(".page").forEach(p=>{p.classList.remove("active","back-animation");p.style.animation="none"});
-  const sel=document.getElementById(pageIds[index]);
-  void sel.offsetWidth;
-  sel.classList.add("active");
-  sel.style.animation=direction==="back"?"pageBack .45s ease both":"pageEnter .55s ease both";
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const wa=t=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
+const pageIds=["welcome","about","projects","services","pricing","contact"];
+const pageNames=["Welcome","About","Projects","Services","Packages","Contact"];
+let currentPage=0,isTransitioning=false;
+const walker=$("#walker"),navLabel=$("#navLabel");
+
+/* Render content */
+$("#stats").innerHTML=[[PROJECTS.length,"live projects"],["AI","powered automation"]].map(s=>`<span><b>${s[0]}</b> ${s[1]}</span>`).join("");
+$("#projectsGrid").innerHTML=PROJECTS.map(p=>`<article class="project-card"><img src="images/${p.img}" alt="${esc(p.t)} website preview" class="project-image" loading="lazy"><div class="project-info"><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p><p class="did"><b>What I did:</b> ${esc(p.did)}</p><div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div><a class="project-link" href="${p.url}" target="_blank" rel="noopener" aria-label="Visit ${esc(p.t)} live site">Visit Live Site ↗</a></div></article>`).join("");
+$("#demoGrid").innerHTML=CONFIG.demos.length?CONFIG.demos.map(d=>`<div class="demo-card"><h3>${esc(d.title)}</h3>${/\.(mp4|webm)$/i.test(d.src)?`<video src="${esc(d.src)}" controls preload="metadata"></video>`:`<iframe src="${esc(d.src)}" title="${esc(d.title)}" loading="lazy" allowfullscreen></iframe>`}</div>`).join(""):
+ [`<div class="demo-card"><h3>AI Facebook auto-posting</h3><p>A live page where AI creates and publishes daily posts with images and captions.</p><a class="project-link" href="${CONFIG.fbPage||wa("Hi Nauman, I'd like to see the AI Facebook posting demo.")}" target="_blank" rel="noopener">${CONFIG.fbPage?"View the page ↗":"Request a demo ↗"}</a></div>`,
+  `<div class="demo-card"><h3>WhatsApp order bot</h3><p>Chatbots that take orders on WhatsApp. Ask me about your use case.</p><a class="project-link" href="${wa("Hi Nauman, I'm interested in a WhatsApp order bot.")}" target="_blank" rel="noopener">Ask about it ↗</a></div>`].join("");
+$("#servicesGrid").innerHTML=SERVICES.map(s=>`<article class="service-card"><div class="service-icon"><img src="https://cdn.simpleicons.org/${s[0]}" alt="${s[1]}" loading="lazy"></div><h3>${s[2]}</h3><p>${s[3]}</p></article>`).join("");
+$("#steps").innerHTML=STEPS.map(s=>`<div class="step"><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
+$("#priceGrid").innerHTML=PACKS.map(p=>`<article class="price-card${p.hot?" featured":""}">${p.hot?'<span class="badge">Most popular</span>':""}<h3>${p.n}</h3><div class="price">${CONFIG.prices[p.k]?"From "+esc(CONFIG.prices[p.k]):"Custom quote"}</div><ul>${p.f.map(f=>`<li>${f}</li>`).join("")}</ul><a class="primary-btn" href="${wa("Hi Nauman, I'm interested in the "+p.n+" package.")}" target="_blank" rel="noopener">Get a quote</a></article>`).join("");
+$("#reviews").innerHTML=CONFIG.reviews.length?CONFIG.reviews.map(r=>`<figure class="review"><p>“${esc(r.text)}”</p><strong>${esc(r.name)}</strong><small>${esc(r.role||"")}</small></figure>`).join(""):`<div class="review"><p>Your feedback could be here. I'd love to earn the first review for your project.</p><a class="project-link" href="${wa("Hi Nauman, I'd like to discuss a project.")}" target="_blank" rel="noopener">Start a project ↗</a></div>`;
+
+/* Contact links (email is assembled here so bots can't scrape it) */
+["#waHero","#waItem","#waFloat"].forEach(s=>$(s).href=wa("Hi Nauman, I saw your portfolio and I'd like to talk."));
+const mail=CONFIG.emailUser+"@"+CONFIG.emailHost;
+$("#mailItem").href="mailto:"+mail;$("#mailText").textContent=mail;
+if(CONFIG.cv){$("#cvBtn").href=CONFIG.cv;$("#cvBtn").hidden=false}
+$("#yr").textContent=new Date().getFullYear();
+
+/* Page controls + nav dots */
+const nav=$(".bottom-nav");
+pageIds.forEach((id,i)=>{
+  const b=document.createElement("button");b.className="nav-dot";b.setAttribute("aria-label",pageNames[i]+" page");b.onclick=()=>goToPage(i);nav.appendChild(b);
+  if(i===0)return;
+  const c=document.createElement("div");c.className="page-controls";
+  const last=i===pageIds.length-1;
+  c.innerHTML=`<button class="back-btn" onclick="previousPage()">← Back</button><button class="next-btn" onclick="${last?"goHome()":"nextPage()"}">${last?"Back to Home ⌂":pageNames[i+1]+" →"}</button>`;
+  const f=document.getElementById(id);f.appendChild(c);
+});
+const navDots=document.querySelectorAll(".nav-dot");
+
+function showPage(index,direction){
+  document.querySelectorAll(".page").forEach(p=>{p.classList.remove("active");p.style.animation="none"});
+  const sel=document.getElementById(pageIds[index]);void sel.offsetWidth;
+  sel.classList.add("active");sel.style.animation="pageEnter .5s ease both";
   currentPage=index;
-  navDots.forEach((d,i)=>d.classList.toggle("active",i===index));
+  navDots.forEach((d,i)=>{d.classList.toggle("active",i===index);i===index?d.setAttribute("aria-current","page"):d.removeAttribute("aria-current")});
   navLabel.textContent=pageNames[index];
-  if(pageIds[index]==="about"){
-    document.querySelectorAll(".skill").forEach((s,i)=>{s.style.animation="none";void s.offsetWidth;s.style.animation=`skillPop .55s ${i*0.06}s both`});
-  }
+  document.title=index?`${pageNames[index]} | Nauman`:"Nauman | Web Developer, WhatsApp Chatbots & n8n Automation";
+  history.replaceState(null,"",index?"#"+pageIds[index]:location.pathname);
+  if(pageIds[index]==="about")document.querySelectorAll(".skill").forEach((s,i)=>{s.style.animation="none";void s.offsetWidth;s.style.animation=`skillPop .55s ${i*0.06}s both`});
   window.scrollTo({top:0,behavior:"smooth"});
 }
 function nextPage(){
   if(isTransitioning||currentPage>=pageIds.length-1)return;
   isTransitioning=true;
-  walker.classList.remove("walking");
-  walker.style.display="block";
-  walker.style.left="-180px";
-  void walker.offsetWidth;
-  walker.classList.add("walking");
-  setTimeout(()=>{walker.classList.remove("walking");walker.style.display="none";showPage(currentPage+1,"next");isTransitioning=false},1350);
+  walker.classList.remove("walking");walker.style.display="block";walker.style.left="-180px";void walker.offsetWidth;walker.classList.add("walking");
+  setTimeout(()=>{walker.classList.remove("walking");walker.style.display="none";showPage(currentPage+1);isTransitioning=false},1350);
 }
-function previousPage(){if(isTransitioning||currentPage<=0)return;showPage(currentPage-1,"back")}
-function goToPage(i){
-  if(isTransitioning||i<0||i>=pageIds.length||i===currentPage)return;
-  if(i===currentPage+1)nextPage();else showPage(i,i<currentPage?"back":"next");
-}
-function goHome(){if(isTransitioning||currentPage===0)return;showPage(0,"back")}
+function previousPage(){if(isTransitioning||currentPage<=0)return;showPage(currentPage-1)}
+function goToPage(i){if(isTransitioning||i===currentPage)return;i===currentPage+1?nextPage():showPage(i)}
+function goHome(){if(isTransitioning||currentPage===0)return;showPage(0)}
 document.addEventListener("keydown",e=>{
-  if(e.key==="ArrowRight")nextPage();
-  else if(e.key==="ArrowLeft")previousPage();
-  else if(e.key==="Home")goHome();
+  if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+  if(e.key==="ArrowRight")nextPage();else if(e.key==="ArrowLeft")previousPage();else if(e.key==="Home")goHome();
+});
+function fromHash(){const i=pageIds.indexOf(location.hash.slice(1));if(i>-1&&i!==currentPage)showPage(i)}
+window.addEventListener("hashchange",fromHash);
+$(".brand").addEventListener("click",e=>{e.preventDefault();goHome()});
+showPage(Math.max(0,pageIds.indexOf(location.hash.slice(1))));
+
+/* Dark mode */
+const themeBtn=$("#themeBtn");
+function setTheme(t){document.documentElement.dataset.theme=t;themeBtn.textContent=t==="dark"?"☀️":"🌙";document.querySelector('meta[name=theme-color]').content=t==="dark"?"#16131e":"#fff8ef";try{localStorage.setItem("theme",t)}catch(e){}}
+let saved=null;try{saved=localStorage.getItem("theme")}catch(e){}
+setTheme(saved||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));
+themeBtn.onclick=()=>setTheme(document.documentElement.dataset.theme==="dark"?"light":"dark");
+
+/* Contact form */
+$("#leadForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const f=e.target,st=$("#formStatus"),d=Object.fromEntries(new FormData(f));
+  if(d.website)return;
+  if(!d.name.trim()||!d.message.trim()){st.textContent="Please add your name and a short message.";return}
+  const text=`Hi Nauman, I'm ${d.name}.\nService: ${d.service}\n${d.message}${d.phone?"\nMy number: "+d.phone:""}`;
+  if(CONFIG.formEndpoint){
+    st.textContent="Sending…";
+    try{const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)});
+      if(!r.ok)throw 0;f.reset();st.textContent="Thanks! Your message is sent. I'll reply soon.";return}
+    catch(err){st.textContent="Couldn't send. Opening WhatsApp instead."}
+  }
+  window.open(wa(text),"_blank","noopener");
+  if(!CONFIG.formEndpoint)st.textContent="Opening WhatsApp with your message. Just press send there.";
 });
 </script>
 </body>
