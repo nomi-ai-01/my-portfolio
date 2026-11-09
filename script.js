@@ -31,6 +31,14 @@ function initializePortfolio() {
     });
   });
 
+  /* Email copy of the contact form (Web3Forms). Paste your free access key below. */
+  var web3formsKey = "PASTE_YOUR_ACCESS_KEY_HERE";
+  var emailEnabled = /^[0-9a-f-]{30,}$/i.test(web3formsKey);
+  var formNote = document.querySelector(".form-note");
+  if (emailEnabled && formNote) {
+    formNote.textContent = "Your enquiry is also emailed to me, and a message is prepared in WhatsApp.";
+  }
+
   /* Contact form opens WhatsApp */
   var contactForm = document.querySelector("#contact-form");
   var visitorName = document.querySelector("#visitor-name");
@@ -43,7 +51,26 @@ function initializePortfolio() {
       var message = visitorMessage ? visitorMessage.value.trim() : "";
       if (!name || !service || !message) { contactForm.reportValidity(); return; }
       var text = ["Hello Nauman!", "", "I would like to discuss a project.", "", "Name: " + name, "Service: " + service, "", "Message:", message].join("\n");
+      /* Open WhatsApp first (must happen directly on the tap), then email the same enquiry in the background */
       window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text), "_blank", "noopener,noreferrer");
+      var botField = contactForm.querySelector("[name=botcheck]");
+      if (emailEnabled && !(botField && botField.checked)) {
+        try {
+          fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            keepalive: true,
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+              access_key: web3formsKey,
+              subject: "New portfolio enquiry: " + service,
+              from_name: "Portfolio Website",
+              name: name,
+              service: service,
+              message: message
+            })
+          }).catch(function () {});
+        } catch (err) { /* email is optional; WhatsApp already opened */ }
+      }
     });
   }
 
