@@ -32,7 +32,7 @@ function initializePortfolio() {
   });
 
   /* Email copy of the contact form (Web3Forms). Paste your free access key below. */
-  var web3formsKey = "PASTE_YOUR_ACCESS_KEY_HERE";
+  var web3formsKey = "ee0b50f6-4a5c-4903-88f0-e446ddd022ad";
   var emailEnabled = /^[0-9a-f-]{30,}$/i.test(web3formsKey);
   var formNote = document.querySelector(".form-note");
   if (emailEnabled && formNote) {
