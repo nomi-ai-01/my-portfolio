@@ -23,3 +23,7 @@ IMPORTANT
 - Chatbot, n8n and AI projects are labelled as concepts/workflow builds where a public demo has not been confirmed. Change labels only when you have a real working demo.
 - No date of birth or marital status is included.
 - The CV is rewritten in a professional layout from the details supplied in your CV image. Verify every employer/date/title before sending it to employers; dates were not visible in the supplied CV.
+
+UPDATE NOTES
+- New: premium.css (loaded after style.css), ORYVEX project card (#12), Browser Game Development service, favicon files, og-image.jpg.
+- Upload everything in this folder to the repository root, replacing old files. app.js and the old peek/stand/walk/think PNGs are no longer used.

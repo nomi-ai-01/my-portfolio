@@ -158,3 +158,6 @@ if (document.readyState === "loading") {
 } else {
   initializePortfolio();
 }
+
+/* Scroll progress bar */
+(function(){var bar=document.querySelector(".scroll-progress");if(!bar)return;function u(){var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?Math.min(100,window.scrollY/h*100):0)+"%";}window.addEventListener("scroll",u,{passive:true});window.addEventListener("resize",u);u();})();
