@@ -2,7 +2,7 @@ NAUMAN PORTFOLIO — UPLOAD GUIDE
 
 FILES
 - index.html
-- styles.css
+- style.css
 - app.js
 - images/nauman-profile.jpg
 - images/nauman-logo.svg
@@ -11,7 +11,7 @@ FILES
 GITHUB PAGES UPLOAD
 1. Open your existing GitHub repository.
 2. Replace the old index.html with this index.html.
-3. Upload styles.css and app.js to the repository root (same level as index.html).
+3. Upload style.css and app.js to the repository root (same level as index.html).
 4. Open the images folder and upload nauman-profile.jpg and nauman-logo.svg.
 5. Create a folder named files if it does not exist; upload Nauman-CV.pdf inside it.
 6. Keep any existing project images/assets if they are still used elsewhere.
